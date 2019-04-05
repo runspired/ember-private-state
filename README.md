@@ -1,4 +1,4 @@
-debug-decorators
+ember-private-state
 ==============================================================================
 
 [Short description of the addon.]
@@ -15,7 +15,7 @@ Installation
 ------------------------------------------------------------------------------
 
 ```
-ember install debug-decorators
+ember install ember-private-state
 ```
 
 

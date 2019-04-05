@@ -3,7 +3,7 @@
 ## Installation
 
 * `git clone <repository-url>`
-* `cd debug-decorators`
+* `cd ember-private-state`
 * `npm install`
 
 ## Linting
