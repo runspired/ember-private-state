@@ -18,6 +18,7 @@
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
     "start": "ember serve",
+    "test:production": "ember test -e production",
     "test": "ember test",
     "test:all": "ember try:each",
     "prepublishOnly": "ember ts:precompile",
