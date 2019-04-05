@@ -1,7 +1,8 @@
 ember-private-state
 ==============================================================================
 
-[Short description of the addon.]
+Decorators & Utils for managing and encapsulating private state in classes and
+modules with blazing performance and good ergonomics
 
 
 Compatibility
