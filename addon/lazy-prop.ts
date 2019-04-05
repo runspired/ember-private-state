@@ -1,11 +1,5 @@
 import { DEBUG } from '@glimmer/env';
-import { dictionaryFor } from './-private';
-
-const MetaProperties = DEBUG ? new WeakMap() : null;
-
-function metaFor(instance: object) {
-    return dictionaryFor(MetaProperties as WeakMap<object, object>, instance);
-}
+import { metaFor } from './-private';
 
 export default function lazyProp(target: any, name: string, descriptor) {
   let key = `___${name}`;
