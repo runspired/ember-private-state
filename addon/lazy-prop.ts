@@ -11,7 +11,7 @@ interface Descriptor<T> extends TypedPropertyDescriptor<T> {
     get: () => any;
 }
 
-export default function lazyProp(target: any, name: string, descriptor: Descriptor<string>): TypedPropertyDescriptor<string> {
+export default function lazyProp(target: any, name: string, descriptor: Descriptor<any>): TypedPropertyDescriptor<any> {
   let key = `___${name}`;
   const get = descriptor.get;
   const set = descriptor.set;
