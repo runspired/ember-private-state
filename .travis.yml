@@ -34,13 +34,17 @@ jobs:
   include:
     # runs linting and tests with current locked deps
 
-    - stage: "Tests"
-      name: "Tests"
+    - stage: 'Basic Tests'
+      name: 'Linting'
+      if: NOT (branch ~= /^(release|lts).*/)
       script:
         - npm run lint:hbs
         - npm run lint:js
-        - npm test
-        - npm run test:production
+    - name: 'Dev Build Tests'
+      script: npm test
+    - name: 'Production Tests'
+      script: npm run test:production
+        
 
     # we recommend new addons test the current and previous LTS
     # as well as latest stable release (bonus points to beta/canary)
