@@ -56,6 +56,29 @@ module("DebugProxy", function() {
     );
   });
 
+  test(`DebugProxy creates unique instances`, async function(assert) {
+    let instances: TestObject[] = [];
+    class TestObject {
+      constructor() {
+        instances.push(this);
+      }
+      get myProp() {
+        return null;
+      }
+    }
+    const Test = DebugProxy(TestObject);
+    let instance1 = new Test();
+    let instance2 = new Test();
+    assert.ok(
+      instance1 !== instance2,
+      `Instantiates unique instances ${DEBUG ? "development" : "production"}`
+    );
+    assert.ok(
+      instances[0] !== instances[1],
+      `Instantiates unique instances ${DEBUG ? "development" : "production"}`
+    );
+  });
+
   if (DEBUG) {
     test(`DebugProxy shields private properties in development`, async function(assert) {
       let value = "abc";
@@ -114,7 +137,7 @@ module("DebugProxy", function() {
         "We can access private state internally"
       );
     });
-    test(`DebugProxy still allows instances to access their own private state`, async function(assert) {
+    test(`DebugProxy still allows instance methods to access their own private state`, async function(assert) {
       class TestObject {
         @isPrivate
         myProp(v) {
