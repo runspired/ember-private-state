@@ -1,6 +1,6 @@
 {
   "name": "ember-private-state",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Decorators & Utils for managing and encapsulating private state in classes and modules with blazing performance and good ergonomics",
   "keywords": [
     "ember-addon",
